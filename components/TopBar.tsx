@@ -12,7 +12,7 @@ const TopBar = () => {
                 <input
                     type="text"
                     placeholder='Try searching "insights"'
-                    className="w-full bg-[#EBEBEA] rounded-full py-3.5 pl-12 pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 focus:outline-none shadow-search"
+                    className="w-full bg-white rounded-full py-3.5 pl-12 pr-4 text-[13px] font-medium text-gray-700 placeholder:text-gray-400 focus:outline-none shadow-search"
                 />
             </div>
 

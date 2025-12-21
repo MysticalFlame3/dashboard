@@ -129,8 +129,8 @@ const PlatformValue = () => {
                 </div>
 
                 {/* Right Chart Area */}
-                <div className="flex-1 relative overflow-x-auto no-scrollbar">
-                    <div className="h-full min-h-[250px] min-w-[350px] w-full text-xs">
+                <div className="flex-1 relative overflow-hidden">
+                    <div className="h-full min-h-[250px] w-full text-xs">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={MONTHLY_REV_DATA} barGap={12} barCategoryGap="20%" margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
                                 <defs>

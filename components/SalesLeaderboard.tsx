@@ -5,84 +5,79 @@ import { SALES_DYNAMIC_DATA, AVATAR_1, AVATAR_2, AVATAR_3 } from '../constants';
 
 const SalesLeaderboard = () => {
     return (
-        <div className="h-full flex flex-col relative">
+        <div className="h-full flex flex-col relative w-full overflow-hidden">
 
-            {/* Header Labels - Aligned with the 'Armin' row below */}
-            <div className="flex justify-between items-center text-[11px] font-bold text-gray-400 mb-2 p-2 pl-3 pr-2 border-x border-transparent">
-                <span className="w-32 pl-10">Sales</span> {/* Added pl-10 to align text with Name after Avatar space */}
-                <div className="flex items-center justify-end flex-1 gap-2">
-                    <span className="w-20 text-left">Revenue</span>
-                    <span className="w-20 text-center">Leads</span>
-                    <span className="w-10 text-center">KPI</span>
-                    <span className="w-24 text-left pl-3">W/L</span>
-                    <span className="w-8"></span>
-                </div>
+            {/* Header Labels - Grid Layout */}
+            <div className="grid grid-cols-[1.5fr_1fr_1fr_0.6fr_1fr_0.2fr] xl:grid-cols-[1.8fr_1.2fr_1.2fr_0.8fr_1.4fr_0.4fr] gap-2 items-center text-[10px] xl:text-[11px] font-bold text-gray-400 mb-2 px-4 border-x border-transparent">
+                <span className="pl-2">Sales</span>
+                <span className="text-left">Revenue</span>
+                <span className="text-center">Leads</span>
+                <span className="text-center">KPI</span>
+                <span className="text-left pl-2">W/L</span>
+                <span></span>
             </div>
 
-            {/* Row 1: Armin A. - Outside pink card, floating white pill */}
-            <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-card-secondary flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mb-6">
-                <div className="flex items-center gap-3 w-32 shrink-0">
-                    <img src={AVATAR_1} className="w-10 h-10 rounded-full object-cover" />
-                    <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Armin A.</span>
+            {/* Row 1: Armin A. */}
+            <div className="bg-white rounded-full py-2 px-4 shadow-card-secondary border border-transparent grid grid-cols-[1.5fr_1fr_1fr_0.6fr_1fr_0.2fr] xl:grid-cols-[1.8fr_1.2fr_1.2fr_0.8fr_1.4fr_0.4fr] gap-2 items-center hover:shadow-md transition-shadow cursor-pointer mb-6 relative z-10">
+                <div className="flex items-center gap-3 min-w-0">
+                    <img src={AVATAR_1} className="w-8 h-8 xl:w-10 xl:h-10 rounded-full object-cover shrink-0" />
+                    <span className="font-bold text-sm text-gray-800 truncate">Armin A.</span>
                 </div>
 
-                <div className="flex items-center justify-end flex-1 gap-2">
-                    <span className="w-20 font-bold text-sm text-gray-900 text-left">$209,633</span>
+                <span className="font-bold text-[13px] text-gray-900 text-left truncate">$209,633</span>
 
-                    <div className="w-20 flex justify-center gap-1">
-                        <span className="bg-[#111111] text-white text-[10px] font-bold w-7 h-5 rounded-full flex items-center justify-center">41</span>
-                        <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-9 h-5 rounded-full flex items-center justify-center">118</span>
-                    </div>
-
-                    <span className="w-10 font-bold text-xs text-gray-800 text-center">0.84</span>
-
-                    <div className="w-24 flex items-center gap-1.5 pl-3">
-                        <span className="text-gray-600 font-bold text-[11px] w-8">31%</span>
-                        <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">12</span>
-                        <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">29</span>
-                    </div>
-
-                    {/* Spacer to align with button column */}
-                    <div className="w-8 h-8 ml-1"></div>
+                <div className="flex justify-center gap-1">
+                    <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center shrink-0">41</span>
+                    <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-7 h-5 rounded-full flex items-center justify-center shrink-0">118</span>
                 </div>
+
+                <span className="font-bold text-xs text-gray-800 text-center">0.84</span>
+
+                <div className="flex items-center gap-1 pl-2">
+                    <span className="text-gray-600 font-bold text-[11px] w-7 text-right">31%</span>
+                    <span className="bg-[#111111] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">12</span>
+                    <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">29</span>
+                </div>
+
+                <div></div>
             </div>
 
-            {/* The Pink Card Container - Starts from Mikasa */}
+            {/* The Pink Card Container */}
             <div className="bg-gradient-to-b from-[#FFF0F5] to-[#FFF5F7] rounded-[2.5rem] py-6 flex-1 flex flex-col gap-6 relative">
 
                 {/* Row 2: Mikasa A. */}
-                <div className="flex flex-col gap-3">
-                    <div className="p-2 pl-3 pr-2 flex items-center justify-between cursor-pointer">
-                        <div className="flex items-center gap-3 w-32 shrink-0">
-                            <img src={AVATAR_3} className="w-10 h-10 rounded-full object-cover" />
-                            <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Mikasa A.</span>
+                <div className="flex flex-col gap-3 px-2">
+                    <div className="py-2 px-2 border border-transparent grid grid-cols-[1.5fr_1fr_1fr_0.6fr_1fr_0.2fr] xl:grid-cols-[1.8fr_1.2fr_1.2fr_0.8fr_1.4fr_0.4fr] gap-2 items-center cursor-pointer">
+                        <div className="flex items-center gap-3 min-w-0">
+                            <img src={AVATAR_3} className="w-8 h-8 xl:w-10 xl:h-10 rounded-full object-cover shrink-0" />
+                            <span className="font-bold text-sm text-gray-800 truncate">Mikasa A.</span>
                         </div>
 
-                        <div className="flex items-center justify-end flex-1 gap-2">
-                            <span className="w-20 font-bold text-sm text-gray-900 text-left">$156,841</span>
+                        <span className="font-bold text-[13px] text-gray-900 text-left truncate">$156,841</span>
 
-                            <div className="w-20 flex justify-center gap-1">
-                                <span className="bg-[#111111] text-white text-[10px] font-bold w-7 h-5 rounded-full flex items-center justify-center">54</span>
-                                <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-9 h-5 rounded-full flex items-center justify-center">103</span>
-                            </div>
+                        <div className="flex justify-center gap-1">
+                            <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center shrink-0">54</span>
+                            <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-7 h-5 rounded-full flex items-center justify-center shrink-0">103</span>
+                        </div>
 
-                            <span className="w-10 font-bold text-xs text-gray-800 text-center">0.89</span>
+                        <span className="font-bold text-xs text-gray-800 text-center">0.89</span>
 
-                            <div className="w-24 flex items-center gap-1.5 pl-3">
-                                <span className="text-gray-600 font-bold text-[11px] w-8">39%</span>
-                                <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">21</span>
-                                <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">33</span>
-                            </div>
+                        <div className="flex items-center gap-1 pl-2">
+                            <span className="text-gray-600 font-bold text-[11px] w-7 text-right">39%</span>
+                            <span className="bg-[#111111] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">21</span>
+                            <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">33</span>
+                        </div>
 
-                            {/* Red Button with Straight Up Arrow */}
-                            <div className="w-8 h-8 bg-[#E93C68] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform ml-1 shrink-0">
+                        {/* Red Button */}
+                        <div className="flex justify-end">
+                            <div className="w-8 h-8 bg-[#E93C68] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform shrink-0">
                                 <ChevronUp size={20} strokeWidth={2.5} />
                             </div>
                         </div>
                     </div>
 
                     {/* Badges */}
-                    <div className="flex flex-wrap gap-2 pl-4 px-6">
+                    <div className="flex flex-wrap gap-2 px-4">
                         <div className="bg-white px-3 py-1.5 rounded-full shadow-pill flex items-center gap-1.5 hover:shadow-md transition-shadow cursor-pointer">
                             <span className="text-[11px] font-bold text-gray-700">Top sales</span>
                             <span className="text-xs">💪</span>
@@ -112,32 +107,32 @@ const SalesLeaderboard = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-12 gap-3 h-[180px]">
-                        {/* Dribbble (Large Left) - Span 6 */}
-                        <div className="col-span-6 bg-white p-5 rounded-[1.5rem] shadow-card-primary relative overflow-hidden flex flex-col justify-between">
+                    <div className="grid grid-cols-1 xl:grid-cols-12 gap-3 h-auto xl:h-[180px]">
+                        {/* Dribbble (Large Left) */}
+                        <div className="xl:col-span-6 bg-white p-5 rounded-[1.5rem] shadow-card-primary relative overflow-hidden flex flex-col justify-between min-h-[160px]">
                             <div className="flex items-center gap-2">
                                 <Dribbble size={20} className="text-[#E93C68]" />
                                 <span className="font-bold text-xs text-gray-700">Dribbble</span>
                             </div>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-3xl font-bold text-gray-900 tracking-tight">45.3%</span>
-                                <span className="text-xl font-bold text-gray-300">$71,048</span>
+                                <span className="text-3xl font-bold text-gray-300">$71,048</span>
                             </div>
                             <div className="absolute top-0 right-0 bottom-0 w-24 opacity-[0.08] bg-[repeating-linear-gradient(-45deg,#E93C68,#E93C68_10px,transparent_10px,transparent_20px)] pointer-events-none"></div>
                         </div>
 
-                        {/* Right Column Grid - Span 6 */}
-                        <div className="col-span-6 grid grid-rows-3 gap-3">
+                        {/* Right Column Grid */}
+                        <div className="xl:col-span-6 grid grid-rows-3 gap-3">
                             {/* Instagram (Top Right) */}
-                            <div className="row-span-2 grid grid-cols-2 gap-3">
-                                <div className="bg-white p-4 rounded-[1.5rem] shadow-card-primary flex flex-col justify-between">
+                            <div className="row-span-2 grid grid-cols-2 gap-3 min-w-0">
+                                <div className="bg-white p-2.5 rounded-[1.5rem] shadow-card-primary flex flex-col justify-between overflow-hidden min-w-0 max-w-full">
                                     <div className="flex items-center gap-2">
-                                        <Instagram size={18} className="text-orange-500" />
-                                        <span className="font-bold text-[10px] text-gray-700">Instagram</span>
+                                        <Instagram size={18} className="text-orange-500 shrink-0" />
+                                        <span className="font-bold text-[10px] text-gray-700 truncate">Instagram</span>
                                     </div>
-                                    <div className="mt-auto flex items-baseline gap-1">
-                                        <div className="text-lg font-bold text-gray-900 leading-none tracking-tighter">28.1%</div>
-                                        <div className="text-lg font-bold text-gray-400 tracking-tighter">$44,072</div>
+                                    <div className="mt-auto flex flex-col xl:flex-row xl:items-baseline gap-0.5 xl:gap-2 min-w-0 max-w-full">
+                                        <div className="text-lg xl:text-xl font-bold text-gray-900 leading-none tracking-tight">28.1%</div>
+                                        <div className="text-lg xl:text-xl font-bold text-gray-400 tracking-tight truncate whitespace-nowrap">$44,072</div>
                                     </div>
                                 </div>
 
@@ -149,9 +144,9 @@ const SalesLeaderboard = () => {
                                             <Chrome size={14} className="text-blue-500 shrink-0" />
                                             <span className="text-[11px] font-bold text-gray-800">Google</span>
                                         </div>
-                                        <div className="flex items-baseline gap-1 relative z-10 mt-1">
-                                            <span className="text-[13px] font-bold text-gray-900">14.1%</span>
-                                            <span className="text-[11px] font-bold text-gray-400 whitespace-nowrap">$22,114</span>
+                                        <div className="flex flex-col lg:flex-row lg:items-baseline gap-0.5 relative z-10 mt-1">
+                                            <span className="text-xs font-bold text-gray-900">14.1%</span>
+                                            <span className="text-[10px] font-bold text-gray-400 whitespace-nowrap">$22k</span>
                                         </div>
                                     </div>
                                     <div className="bg-white px-3 py-3 rounded-[1.2rem] shadow-card-primary flex items-center gap-2">
@@ -159,9 +154,9 @@ const SalesLeaderboard = () => {
                                             <div className="w-3 h-3 bg-black rounded-full border border-white"></div>
                                             <div className="w-3 h-3 bg-gray-300 rounded-full border border-white"></div>
                                         </div>
-                                        <div className="flex items-baseline gap-1">
-                                            <span className="text-[13px] font-bold text-gray-800 leading-none">5.4%</span>
-                                            <span className="text-[11px] font-bold text-gray-400 font-medium">$8,469</span>
+                                        <div className="flex flex-col lg:flex-row lg:items-baseline gap-0.5 min-w-0">
+                                            <span className="text-xs font-bold text-gray-800 leading-none">5.4%</span>
+                                            <span className="text-[10px] font-bold text-gray-400 font-medium truncate">$8k</span>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +170,7 @@ const SalesLeaderboard = () => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <span className="text-[11px] font-bold text-gray-900">7.1%</span>
-                                    <span className="text-[10px] font-bold text-gray-300">$11,135</span>
+                                    <span className="text-[10px] font-bold text-gray-300">$11k</span>
                                 </div>
                             </div>
                         </div>
@@ -230,82 +225,80 @@ const SalesLeaderboard = () => {
                         </ResponsiveContainer>
                     </div>
 
-                    {/* Custom Timeline Track - Flexbox Aligned to Columns */}
-                    <div className="relative mt-4 mb-2 pl-3 pr-2">
+                    {/* Custom Timeline Track - Grid Aligned */}
+                    <div className="relative mt-4 mb-2 px-4">
                         {/* Gradient Background Line */}
-                        <div className="absolute top-1/2 left-2 right-2 -translate-y-1/2 h-1.5 bg-gradient-to-r from-[#2563EB] via-[#E93C68] to-[#4ADE80] rounded-full opacity-80"></div>
+                        <div className="absolute top-1/2 left-4 right-4 -translate-y-1/2 h-1.5 bg-[linear-gradient(90deg,#E93C68_0%,#F97316_30%,#FACC15_60%,#4ADE80_100%)] rounded-full opacity-80"></div>
 
-                        {/* Flex Container for Markers - Mirrors Footer Structure exactly */}
-                        <div className="relative flex items-center justify-between w-full z-10">
-                            {/* Left Spacer (matches Avatar+Name column) */}
-                            <div className="w-32 shrink-0"></div>
+                        {/* Flex Container for Markers - Grid-Like Spacing */}
+                        {/* We use the same grid columns to align the markers */}
+                        <div className="grid grid-cols-[1.5fr_1fr_1fr_0.6fr_1fr_0.2fr] xl:grid-cols-[1.8fr_1.2fr_1.2fr_0.8fr_1.4fr_0.4fr] gap-2 items-center w-full z-10 relative">
+                            {/* Empty Left */}
+                            <div></div>
 
-                            {/* Right Columns Group */}
-                            <div className="flex items-center justify-end flex-1 gap-2">
-                                {/* Revenue Column Marker (Be - Blue) - ALIGNED LEFT with Text */}
-                                <div className="w-20 flex justify-start relative pl-1">
-                                    <div className="w-5 h-5 bg-[#2563EB] rounded-md flex items-center justify-center border-[3px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform relative">
-                                        <span className="text-white font-bold text-[9px] tracking-tighter loading-none">Be</span>
-                                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
-                                            <ChevronUp size={8} className="text-white" strokeWidth={4} />
-                                        </div>
+                            {/* Revenue Marker (Blue) */}
+                            <div className="flex justify-start pl-1">
+                                <div className="w-5 h-5 bg-[#2563EB] rounded-md flex items-center justify-center border-[3px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform relative">
+                                    <span className="text-white font-bold text-[9px] tracking-tighter leading-none">Be</span>
+                                    <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
+                                        <ChevronUp size={8} className="text-white" strokeWidth={4} />
                                     </div>
                                 </div>
-
-                                {/* Leads Column Marker (Dribbble - Pink) - ALIGNED CENTER with Pills */}
-                                <div className="w-20 flex justify-center relative">
-                                    <div className="w-5 h-5 bg-[#E93C68] rounded-full flex items-center justify-center border-[3px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform relative">
-                                        <Dribbble size={10} className="text-white" />
-                                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#111111] rounded-full border border-white flex items-center justify-center z-20">
-                                            <div className="rotate-180"><ChevronUp size={8} className="text-white" strokeWidth={4} /></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* KPI Column Spacer - Empty */}
-                                <div className="w-10"></div>
-
-                                {/* W/L Column Marker (Avatar - Star) */}
-                                <div className="w-24 flex justify-end relative pr-4">
-                                    <div className="w-5 h-5 rounded-full border-[3px] border-white shadow-sm z-10 relative overflow-visible cursor-pointer hover:scale-110 transition-transform">
-                                        <img src={AVATAR_2} className="w-full h-full rounded-full object-cover" />
-                                        <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
-                                            <Star size={5} fill="white" className="text-white" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Right Edge Spacer */}
-                                <div className="w-8"></div>
                             </div>
+
+                            {/* Leads Marker (Pink) */}
+                            <div className="flex justify-center">
+                                <div className="w-5 h-5 bg-[#E93C68] rounded-full flex items-center justify-center border-[3px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform relative">
+                                    <Dribbble size={10} className="text-white" />
+                                    <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#111111] rounded-full border border-white flex items-center justify-center z-20">
+                                        <div className="rotate-180"><ChevronUp size={8} className="text-white" strokeWidth={4} /></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Empty KPI */}
+                            <div></div>
+
+                            {/* W/L Marker (Star) */}
+                            <div className="flex justify-end pr-2">
+                                <div className="w-5 h-5 rounded-full border-[3px] border-white shadow-sm z-10 relative overflow-visible cursor-pointer hover:scale-110 transition-transform">
+                                    <img src={AVATAR_2} className="w-full h-full rounded-full object-cover" />
+                                    <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
+                                        <Star size={5} fill="white" className="text-white" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Empty End */}
+                            <div></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Row 3: Eren Y. - Outside pink card, bottom separate row */}
-            <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] border border-gray-100/50 flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mt-6">
-                <div className="flex items-center gap-3 w-32 shrink-0">
-                    <img src={AVATAR_2} className="w-10 h-10 rounded-full object-cover" />
-                    <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Eren Y.</span>
+            {/* Row 3: Eren Y. - Grid Layout */}
+            <div className="bg-white rounded-full py-2 px-4 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] border border-gray-100/50 grid grid-cols-[1.5fr_1fr_1fr_0.6fr_1fr_0.2fr] xl:grid-cols-[1.8fr_1.2fr_1.2fr_0.8fr_1.4fr_0.4fr] gap-2 items-center hover:shadow-md transition-shadow cursor-pointer mt-6 relative z-10 w-full box-border min-w-0">
+                <div className="flex items-center gap-3 min-w-0">
+                    <img src={AVATAR_2} className="w-8 h-8 xl:w-10 xl:h-10 rounded-full object-cover shrink-0" />
+                    <span className="font-bold text-sm text-gray-800 truncate whitespace-nowrap">Eren Y.</span>
                 </div>
 
-                <div className="flex items-center justify-end flex-1 gap-2">
-                    <span className="w-20 font-bold text-sm text-gray-900 text-left pl-1">$117,115</span>
-                    <div className="w-20 flex justify-end gap-1 pr-8">
-                        <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">22</span>
-                        <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-8 h-5 rounded-full flex items-center justify-center">84</span>
-                    </div>
-                    <div className="w-32 flex items-center justify-between px-4">
-                        <span className="font-bold text-xs text-gray-800">0.79</span>
-                        <span className="text-gray-600 font-bold text-[11px]">32%</span>
-                    </div>
-                    <div className="w-24 flex items-center justify-end gap-1.5 pr-4">
-                        <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">7</span>
-                        <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center">15</span>
-                    </div>
-                    <div className="w-8 h-8 ml-1"></div>
+                <span className="font-bold text-[13px] text-gray-900 text-left truncate whitespace-nowrap">$117,115</span>
+
+                <div className="flex justify-center gap-1 min-w-0">
+                    <span className="bg-[#111111] text-white text-[10px] font-bold w-6 h-5 rounded-full flex items-center justify-center shrink-0">22</span>
+                    <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-7 h-5 rounded-full flex items-center justify-center shrink-0">84</span>
                 </div>
+
+                <span className="font-bold text-xs text-gray-800 text-center truncate whitespace-nowrap">0.79</span>
+
+                <div className="flex items-center gap-1 pl-2 min-w-0">
+                    <span className="text-gray-600 font-bold text-[11px] w-7 text-right truncate whitespace-nowrap">32%</span>
+                    <span className="bg-[#111111] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">7</span>
+                    <span className="bg-[#F3F4F6] text-gray-500 text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">15</span>
+                </div>
+
+                <div></div>
             </div>
         </div >
     );

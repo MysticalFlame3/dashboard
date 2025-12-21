@@ -52,41 +52,48 @@ export const REFERRER_DATA: ChartData[] = [
 ];
 
 export const SALES_DYNAMIC_DATA: ChartData[] = [
-  { name: 'W 1', value: 2000, value2: 3000 },
-  { name: '', value: 1600, value2: 3100 },
-  { name: '', value: 1800, value2: 3200 },
-  { name: '', value: 1700, value2: 3400 },
-  { name: '', value: 2200, value2: 4000 },
-  { name: '', value: 2100, value2: 4500 },
-  { name: 'W 3', value: 2800, value2: 4800 }, // Peak 1
-  { name: '', value: 2600, value2: 4600 },
-  { name: '', value: 2200, value2: 4000 },
-  { name: '', value: 2400, value2: 3800 },
-  { name: '', value: 3400, value2: 3200 },
-  { name: 'W 5', value: 3800, value2: 2800 }, // Peak 2
-  { name: '', value: 3200, value2: 3000 },
-  { name: '', value: 3400, value2: 3400 },
-  { name: '', value: 3600, value2: 3800 },
-  { name: '', value: 2800, value2: 4200 },
-  { name: '', value: 2200, value2: 3800 }, // Drop start
+  // W1 (Start)
+  { name: 'W 1', value: 1500, value2: 2400 },
+  { name: '', value: 1300, value2: 2800 },
+  { name: '', value: 1400, value2: 3400 },
+  { name: '', value: 1600, value2: 4200 }, // Dash peak 1
+  { name: '', value: 1900, value2: 4000 },
   { name: '', value: 1800, value2: 3600 },
-  { name: 'W 7', value: 1100, value2: 3400 }, // SHARP V-BOTTOM (Touching icon)
-  { name: '', value: 1600, value2: 3300 }, // Sharp rise
-  { name: '', value: 2100, value2: 3400 },
-  { name: '', value: 2400, value2: 3500 },
-  { name: '', value: 2300, value2: 3300 }, // Small dip
-  { name: '', value: 2500, value2: 3200 },
-  { name: 'W 9', value: 2400, value2: 4000 },
-  { name: '', value: 2600, value2: 4400 },
-  { name: '', value: 3000, value2: 4200 },
-  { name: '', value: 2900, value2: 3800 },
-  { name: '', value: 3400, value2: 3600 },
-  { name: '', value: 4000, value2: 3000 },
-  { name: '', value: 3800, value2: 2800 }, // Jagged dip
-  { name: 'W 11', value: 5000, value2: 2800 }, // Rise
-  { name: '', value: 5400, value2: 3000 },
-  { name: '', value: 5300, value2: 3500 },
-  { name: '', value: 6000, value2: 4200 }, // End flick
+
+  // W3 (Red rising, Dash dropping)
+  { name: 'W 3', value: 2400, value2: 3200 },
+  { name: '', value: 3200, value2: 2800 },
+  { name: '', value: 4500, value2: 2600 }, // Red shoots up
+  { name: '', value: 5800, value2: 2500 }, // Red Peak 1
+  { name: '', value: 6200, value2: 2800 },
+  { name: '', value: 5400, value2: 3200 }, // Red small dip
+
+  // W5 (Red secondary peak, then CRASH)
+  { name: 'W 5', value: 5800, value2: 3500 },
+  { name: '', value: 4800, value2: 3600 },
+  { name: '', value: 3600, value2: 3500 },
+  { name: '', value: 2400, value2: 3400 }, // Freefall
+  { name: '', value: 1200, value2: 3300 }, // Deep valley
+
+  // W7 (Bottom, then recovery)
+  { name: 'W 7', value: 800, value2: 3200 }, // Lowest Point
+  { name: '', value: 1600, value2: 3100 },
+  { name: '', value: 2400, value2: 3200 },
+  { name: '', value: 2800, value2: 3600 },
+  { name: '', value: 2900, value2: 4000 }, // Crossing
+  { name: '', value: 3400, value2: 4200 },
+
+  // W9 (Steady climb)
+  { name: 'W 9', value: 4200, value2: 4000 },
+  { name: '', value: 4800, value2: 3400 },
+  { name: '', value: 5800, value2: 3000 },
+  { name: '', value: 6400, value2: 2600 },
+
+  // W11 (Final ascent)
+  { name: 'W 11', value: 7200, value2: 2800 },
+  { name: '', value: 7600, value2: 3000 },
+  { name: '', value: 7400, value2: 3400 }, // Small jaggedness
+  { name: '', value: 8000, value2: 4000 }, // Top
 ];
 
 export const MONTHLY_REV_DATA: ChartData[] = [

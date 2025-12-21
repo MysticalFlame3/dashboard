@@ -30,7 +30,7 @@ const PlatformStats = () => {
         {/* List */}
         <div className="space-y-3">
             {platforms.map((p, i) => (
-                <div key={i} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                <div key={i} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer min-w-0 max-w-full">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 flex items-center justify-center">
                             {p.icon}
@@ -38,8 +38,8 @@ const PlatformStats = () => {
                         <span className="font-bold text-gray-500 text-sm">{p.name}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                        <span className="font-extrabold text-gray-900 text-sm">{p.amount}</span>
-                        <span className="bg-[#F3F4F6] text-gray-600 text-[11px] font-bold px-2 py-1 rounded-full">{p.pct}</span>
+                        <span className="font-extrabold text-gray-900 text-sm truncate whitespace-nowrap">{p.amount}</span>
+                        <span className="bg-[#F3F4F6] text-gray-600 text-[11px] font-bold px-2 py-1 rounded-full truncate whitespace-nowrap">{p.pct}</span>
                     </div>
                 </div>
             ))}
