@@ -10,7 +10,7 @@ const SalesProgress = () => {
             <div className="flex-1 bg-[#F5F5F4] rounded-full p-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
                 {/* Data Items - Elongated White Pills */}
                 {SALES_PROGRESS_DATA.map((data, idx) => (
-                    <div key={idx} className="bg-white rounded-full p-2 pr-8 flex items-center gap-4 min-w-[350px] shadow-sm shrink-0">
+                    <div key={idx} className="bg-white rounded-full p-2 pr-8 flex items-center gap-4 min-w-[350px] shadow-card-secondary shrink-0">
                         <img src={data.user.avatar} alt={data.user.name} className="w-10 h-10 rounded-full object-cover" />
                         <span className="text-base font-bold text-gray-900">{data.amount}</span>
                         <span className="ml-auto text-sm font-bold text-gray-400">{data.percentage}%</span>

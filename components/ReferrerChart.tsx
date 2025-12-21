@@ -3,7 +3,7 @@ import { Filter, ChevronDown, Dribbble, Instagram, Chrome, ShoppingBag, BarChart
 
 const ReferrerChart = () => {
     return (
-        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col justify-between shadow-card-primary border border-border-subtle">
+        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col justify-between border-[4px] border-white shadow-none">
             {/* Header */}
             <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-2 text-gray-800">

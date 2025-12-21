@@ -72,66 +72,67 @@ const PlatformValue = () => {
     const avatars3 = [AVATAR_1, AVATAR_2, AVATAR_1];
 
     return (
-        <div className="bg-[#F5F5F4] rounded-[2rem] p-5 shadow-card-primary border border-border-subtle h-full flex flex-col">
+        <div className="bg-[#F5F5F4] rounded-[2rem] p-5 border-[4px] border-white shadow-none h-full flex flex-col">
             {/* Header */}
-            <div className="flex items-start justify-between mb-5">
+            <div className="flex items-start justify-between mb-10">
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full border border-pink-100 flex items-center justify-center text-[#E93C68] bg-white">
+                    <div className="w-10 h-10 rounded-full border border-pink-100 flex items-center justify-center text-[#E93C68] bg-white shadow-sm">
                         <Dribbble size={20} />
                     </div>
-                    <div>
+                    <div className="leading-tight">
                         <div className="text-xs text-gray-400 font-bold">Platform value</div>
                         <div className="text-sm font-bold text-gray-900 flex items-center gap-1">
                             Dribbble <ChevronDown size={14} />
                         </div>
                     </div>
                 </div>
-                <div className="flex bg-white rounded-full p-1 gap-1 shadow-sm border border-border-subtle items-center">
-                    <button className="bg-[#111111] text-white text-[11px] font-bold px-4 py-2 rounded-full shadow-md">Revenue</button>
-                    <button className="bg-transparent text-gray-500 text-[11px] font-bold px-3 py-2 hover:text-gray-900 transition-colors">Leads</button>
-                    <button className="bg-transparent text-gray-500 text-[11px] font-bold px-3 py-2 hover:text-gray-900 transition-colors">W/L</button>
+                {/* Toggle - White Container */}
+                <div className="flex bg-white rounded-xl p-1.5 gap-1 items-center shadow-none border border-transparent">
+                    <button className="bg-[#111111] text-white text-[11px] font-bold px-4 py-2 rounded-lg shadow-md">Revenue</button>
+                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors">Leads</button>
+                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors">W/L</button>
                 </div>
             </div>
 
             {/* Content Area */}
             <div className="flex flex-1 gap-4 items-stretch">
                 {/* Left Red Panel */}
-                <div className="w-[170px] bg-[#D92D55] rounded-[1.5rem] rounded-tr-[3.5rem] p-6 text-white flex flex-col justify-center relative overflow-hidden shrink-0 shadow-xl shadow-pink-500/20">
-                    {/* Rotated Text */}
-                    <div className="absolute top-1/2 -left-6 transform -rotate-90 text-white/40 text-[11px] font-bold tracking-[0.2em] whitespace-nowrap uppercase">Average monthly</div>
-
-                    <div className="space-y-6 relative z-10 pl-4">
-                        <div>
-                            <div className="text-white/80 text-[11px] font-semibold mb-1">Revenue</div>
-                            <div className="text-2xl font-bold tracking-tight">$18,552</div>
-                        </div>
-                        <div>
-                            <div className="text-white/80 text-[11px] font-semibold mb-1">Leads</div>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-2xl font-bold">373</span>
-                                <span className="text-[11px] text-white/50 font-medium">97/276</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="text-white/80 text-[11px] font-semibold mb-1">Win/lose</div>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-2xl font-bold">16%</span>
-                                <span className="text-[11px] text-white/50 font-medium">51/318</span>
-                            </div>
+                <div className="w-[180px] bg-[#E93C68] rounded-tl-none rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-br-none p-0 text-white flex shrink-0 shadow-xl shadow-pink-500/20 overflow-hidden relative">
+                    {/* Rotated Text Container - Aligned Left */}
+                    <div className="w-12 h-full flex flex-col justify-center items-center py-6 absolute left-0 top-0 bottom-0">
+                        <div className="transform -rotate-180 [writing-mode:vertical-rl] text-white/50 text-[11px] font-bold tracking-[0.2em] whitespace-nowrap uppercase">
+                            Average monthly
                         </div>
                     </div>
 
-                    {/* Decorative Shape */}
-                    <svg className="absolute -bottom-1 -right-1 w-20 h-20 text-white/10" viewBox="0 0 100 100" fill="currentColor">
-                        <path d="M50 100 L100 100 L100 50 Q100 100 50 100 Z" />
-                    </svg>
+                    {/* Main Content Info - Pushed Right */}
+                    <div className="flex-1 flex flex-col justify-center gap-8 py-10 pl-6 pr-6 ml-6">
+                        <div>
+                            <div className="text-white/80 text-[11px] font-bold mb-1.5">Revenue</div>
+                            <div className="text-[1.5rem] font-bold tracking-tight leading-none">$18,552</div>
+                        </div>
+                        <div>
+                            <div className="text-white/80 text-[11px] font-bold mb-1.5">Leads</div>
+                            <div className="flex items-baseline gap-2 flex-wrap">
+                                <span className="text-[1.5rem] font-bold leading-none">373</span>
+                                <span className="text-[11px] text-white/60 font-semibold">97/276</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div className="text-white/80 text-[11px] font-bold mb-1.5">Win/lose</div>
+                            <div className="flex items-baseline gap-2 flex-wrap">
+                                <span className="text-[1.5rem] font-bold leading-none">16%</span>
+                                <span className="text-[11px] text-white/60 font-semibold">51/318</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Right Chart Area */}
-                <div className="flex-1 relative">
-                    <div className="h-full min-h-[250px] w-full text-xs">
+                <div className="flex-1 relative overflow-x-auto no-scrollbar">
+                    <div className="h-full min-h-[250px] min-w-[350px] w-full text-xs">
                         <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={MONTHLY_REV_DATA} barGap={4} barCategoryGap="20%" margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
+                            <BarChart data={MONTHLY_REV_DATA} barGap={12} barCategoryGap="20%" margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
                                 <defs>
                                     <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="4" height="4">
                                         <path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" stroke="#E5E7EB" strokeWidth="1.5" />
@@ -156,7 +157,7 @@ const PlatformValue = () => {
                                     dataKey="value"
                                     fill="url(#diagonalHatch)"
                                     radius={[6, 6, 6, 6]}
-                                    barSize={32}
+                                    maxBarSize={32}
                                 >
                                     <LabelList dataKey="value" content={renderCustomLabel} />
                                     <LabelList content={(props) => renderCustomAvatar(props, avatars1)} />
@@ -167,7 +168,7 @@ const PlatformValue = () => {
                                     dataKey="value2"
                                     fill="#E5E7EB"
                                     radius={[6, 6, 6, 6]}
-                                    barSize={32}
+                                    maxBarSize={32}
                                 >
                                     <LabelList content={(props) => renderCustomAvatar(props, avatars2)} />
                                 </Bar>
@@ -177,7 +178,7 @@ const PlatformValue = () => {
                                     dataKey="value3"
                                     fill="#E5E7EB"
                                     radius={[6, 6, 6, 6]}
-                                    barSize={32}
+                                    maxBarSize={32}
                                 >
                                     <LabelList content={(props) => renderCustomAvatar(props, avatars3)} />
                                 </Bar>

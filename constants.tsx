@@ -52,18 +52,41 @@ export const REFERRER_DATA: ChartData[] = [
 ];
 
 export const SALES_DYNAMIC_DATA: ChartData[] = [
-  { name: 'W1', value: 4000, value2: 2400 },
-  { name: 'W2', value: 3000, value2: 1398 },
-  { name: 'W3', value: 2000, value2: 4800 },
-  { name: 'W4', value: 2780, value2: 3908 },
-  { name: 'W5', value: 1890, value2: 4800 },
-  { name: 'W6', value: 2390, value2: 3800 },
-  { name: 'W7', value: 3490, value2: 4300 },
-  { name: 'W8', value: 2000, value2: 2400 },
-  { name: 'W9', value: 2780, value2: 3908 },
-  { name: 'W10', value: 1890, value2: 4800 },
-  { name: 'W11', value: 3490, value2: 4300 },
-  { name: 'W12', value: 3900, value2: 4800 },
+  { name: 'W 1', value: 2000, value2: 3000 },
+  { name: '', value: 1600, value2: 3100 },
+  { name: '', value: 1800, value2: 3200 },
+  { name: '', value: 1700, value2: 3400 },
+  { name: '', value: 2200, value2: 4000 },
+  { name: '', value: 2100, value2: 4500 },
+  { name: 'W 3', value: 2800, value2: 4800 }, // Peak 1
+  { name: '', value: 2600, value2: 4600 },
+  { name: '', value: 2200, value2: 4000 },
+  { name: '', value: 2400, value2: 3800 },
+  { name: '', value: 3400, value2: 3200 },
+  { name: 'W 5', value: 3800, value2: 2800 }, // Peak 2
+  { name: '', value: 3200, value2: 3000 },
+  { name: '', value: 3400, value2: 3400 },
+  { name: '', value: 3600, value2: 3800 },
+  { name: '', value: 2800, value2: 4200 },
+  { name: '', value: 2200, value2: 3800 }, // Drop start
+  { name: '', value: 1800, value2: 3600 },
+  { name: 'W 7', value: 1100, value2: 3400 }, // SHARP V-BOTTOM (Touching icon)
+  { name: '', value: 1600, value2: 3300 }, // Sharp rise
+  { name: '', value: 2100, value2: 3400 },
+  { name: '', value: 2400, value2: 3500 },
+  { name: '', value: 2300, value2: 3300 }, // Small dip
+  { name: '', value: 2500, value2: 3200 },
+  { name: 'W 9', value: 2400, value2: 4000 },
+  { name: '', value: 2600, value2: 4400 },
+  { name: '', value: 3000, value2: 4200 },
+  { name: '', value: 2900, value2: 3800 },
+  { name: '', value: 3400, value2: 3600 },
+  { name: '', value: 4000, value2: 3000 },
+  { name: '', value: 3800, value2: 2800 }, // Jagged dip
+  { name: 'W 11', value: 5000, value2: 2800 }, // Rise
+  { name: '', value: 5400, value2: 3000 },
+  { name: '', value: 5300, value2: 3500 },
+  { name: '', value: 6000, value2: 4200 }, // End flick
 ];
 
 export const MONTHLY_REV_DATA: ChartData[] = [

@@ -11,7 +11,7 @@ const PlatformList = () => {
     ];
 
     return (
-        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col shadow-card-primary border border-border-subtle">
+        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col border-[4px] border-white shadow-none">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2 text-gray-700">
@@ -24,18 +24,18 @@ const PlatformList = () => {
             </div>
 
             {/* List */}
-            <div className="space-y-3 flex-1">
+            <div className="space-y-3 flex-1 overflow-y-auto no-scrollbar">
                 {platforms.map((p, i) => (
-                    <div key={i} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                        <div className="flex items-center gap-3">
-                            <div className="w-8 h-8 flex items-center justify-center">
+                    <div key={i} className="bg-white rounded-2xl p-4 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow cursor-pointer gap-2">
+                        <div className="flex items-center gap-3 min-w-0">
+                            <div className="w-8 h-8 flex items-center justify-center shrink-0">
                                 {p.icon}
                             </div>
-                            <span className="font-bold text-gray-600 text-sm">{p.name}</span>
+                            <span className="text-[13px] font-bold text-gray-500 truncate">{p.name}</span>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <span className="font-extrabold text-gray-900 text-sm">{p.amount}</span>
-                            <span className="bg-[#F3F4F6] text-gray-600 text-[11px] font-bold px-2 py-1 rounded-full">{p.pct}</span>
+                        <div className="flex items-center gap-3 shrink-0">
+                            <span className="text-[13px] font-extrabold text-gray-900">{p.amount}</span>
+                            <span className="bg-[#F3F4F6] text-gray-600 text-[11px] font-bold px-2.5 py-1 rounded-full min-w-[32px] text-center">{p.pct}</span>
                         </div>
                     </div>
                 ))}
