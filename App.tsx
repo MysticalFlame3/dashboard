@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
-import Header from './components/Header';
+import TopBar from './components/TopBar';
+import ReportHeader from './components/ReportHeader';
 import StatCards from './components/StatCards';
 import SalesProgress from './components/SalesProgress';
 import PlatformList from './components/PlatformList';
@@ -15,40 +16,46 @@ function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 h-screen overflow-y-auto p-4 md:p-8 relative">
-        <div className="max-w-[1600px] mx-auto">
-          <Header />
-          <StatCards />
-          <SalesProgress />
+        <div className="max-w-[1600px] mx-auto flex flex-col h-full">
+          {/* Top Search & Profile Area - On Gray Background */}
+          <TopBar />
 
-          {/* Bottom Grid Layout - Custom Split */}
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto min-h-[600px]">
+          {/* New White Container for Dashboard Content */}
+          <div className="bg-white rounded-[2.5rem] p-8 shadow-sm h-full overflow-y-auto no-scrollbar">
+            <ReportHeader />
+            <StatCards />
+            <SalesProgress />
 
-            {/* LEFT SIDE: Platform Stats & Charts (Span 7) */}
-            <div className="xl:col-span-7 flex flex-col gap-6">
-              {/* Top Row: List & Bar Chart */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:h-[340px]">
-                <div className="h-full">
-                  <PlatformList />
+            {/* Bottom Grid Layout - Custom Split */}
+            <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 h-auto min-h-[600px]">
+
+              {/* LEFT SIDE: Platform Stats & Charts (Span 6) */}
+              <div className="xl:col-span-6 flex flex-col gap-6">
+                {/* Top Row: List & Bar Chart */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto md:min-h-[340px]">
+                  <div className="h-full">
+                    <PlatformList />
+                  </div>
+                  <div className="h-full">
+                    <ReferrerChart />
+                  </div>
                 </div>
-                <div className="h-full">
-                  <ReferrerChart />
+
+                {/* Bottom Row: Platform Value Card */}
+                <div className="flex-1 min-h-[280px]">
+                  <PlatformValue />
                 </div>
               </div>
 
-              {/* Bottom Row: Platform Value Card */}
-              <div className="flex-1 min-h-[280px]">
-                <PlatformValue />
+              {/* RIGHT SIDE: Leaderboard (Span 6) */}
+              <div className="xl:col-span-6 h-full min-h-[600px]">
+                <SalesLeaderboard />
               </div>
             </div>
 
-            {/* RIGHT SIDE: Leaderboard (Span 5) */}
-            <div className="xl:col-span-5 h-full min-h-[600px]">
-              <SalesLeaderboard />
-            </div>
+            {/* Bottom padding for scrolling */}
+            <div className="h-10"></div>
           </div>
-
-          {/* Bottom padding for scrolling */}
-          <div className="h-10"></div>
         </div>
       </main>
     </div>

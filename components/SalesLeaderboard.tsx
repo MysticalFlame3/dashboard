@@ -1,16 +1,16 @@
 import React from 'react';
 import { ChevronUp, ArrowUpRight, Instagram, Dribbble, Chrome, ShoppingBag } from 'lucide-react';
-import { ResponsiveContainer, AreaChart, Area, Tooltip } from 'recharts';
+import { ResponsiveContainer, AreaChart, Area, Tooltip, CartesianGrid, XAxis } from 'recharts';
 import { SALES_DYNAMIC_DATA, AVATAR_1, AVATAR_2, AVATAR_3 } from '../constants';
 
 const SalesLeaderboard = () => {
     return (
         <div className="h-full flex flex-col relative">
 
-            {/* Header Labels - Outside the pink card */}
-            <div className="flex justify-between items-center text-[11px] font-bold text-gray-400 px-6 mb-2 pl-8">
-                <span className="w-32">Sales</span>
-                <div className="flex items-center justify-end flex-1 gap-2 pr-4">
+            {/* Header Labels - Aligned with the 'Armin' row below */}
+            <div className="flex justify-between items-center text-[11px] font-bold text-gray-400 mb-2 mx-6 p-2 pl-3 pr-2 border-x border-transparent">
+                <span className="w-32 pl-10">Sales</span> {/* Added pl-10 to align text with Name after Avatar space */}
+                <div className="flex items-center justify-end flex-1 gap-2">
                     <span className="w-20 text-left">Revenue</span>
                     <span className="w-20 text-center">Leads</span>
                     <span className="w-10 text-center">KPI</span>
@@ -20,7 +20,7 @@ const SalesLeaderboard = () => {
             </div>
 
             {/* Row 1: Armin A. - Outside pink card, floating white pill */}
-            <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-card-secondary border border-border-subtle flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mb-6 mx-1">
+            <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-card-secondary border border-border-subtle flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mb-6 mx-6">
                 <div className="flex items-center gap-3 w-32 shrink-0">
                     <img src={AVATAR_1} className="w-10 h-10 rounded-full object-cover" />
                     <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Armin A.</span>
@@ -48,11 +48,11 @@ const SalesLeaderboard = () => {
             </div>
 
             {/* The Pink Card Container - Starts from Mikasa */}
-            <div className="bg-gradient-to-b from-[#FFF0F5] to-[#FFF5F7] rounded-[2.5rem] p-6 flex-1 flex flex-col gap-6 relative">
+            <div className="bg-gradient-to-b from-[#FFF0F5] to-[#FFF5F7] rounded-[2.5rem] p-6 flex-1 flex flex-col gap-6 relative border border-border-subtle">
 
                 {/* Row 2: Mikasa A. */}
                 <div className="flex flex-col gap-3">
-                    <div className="bg-[#FFF1F3] rounded-full p-2 pl-3 pr-2 shadow-active-red flex items-center justify-between hover:shadow-lg transition-shadow cursor-pointer">
+                    <div className="p-2 pl-3 pr-2 flex items-center justify-between cursor-pointer">
                         <div className="flex items-center gap-3 w-32 shrink-0">
                             <img src={AVATAR_3} className="w-10 h-10 rounded-full object-cover" />
                             <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Mikasa A.</span>
@@ -103,31 +103,31 @@ const SalesLeaderboard = () => {
                     <div className="flex justify-between items-center mb-4 px-2">
                         <span className="font-bold text-sm text-gray-800">Work with platforms</span>
                         <div className="flex gap-2">
-                            <span className="bg-[#E93C68] text-white text-[10px] font-bold px-2 py-1 rounded-lg flex items-center gap-1 shadow-md shadow-pink-200">
-                                <div className="w-0 h-0 border-l-[3px] border-l-transparent border-r-[3px] border-r-transparent border-b-[4px] border-b-white"></div> 3
+                            <span className="bg-[#E93C68] text-white text-[11px] font-bold px-3 py-1.5 rounded-2xl flex items-center gap-0.5 shadow-md shadow-pink-200/50">
+                                <ChevronUp size={12} strokeWidth={3} /> 3
                             </span>
-                            <span className="bg-[#E93C68] text-white text-[10px] font-bold px-2 py-1 rounded-lg shadow-md shadow-pink-200">
+                            <span className="bg-[#E93C68] text-white text-[11px] font-bold px-3 py-1.5 rounded-2xl shadow-md shadow-pink-200/50">
                                 $156,841
                             </span>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-12 gap-3 h-[180px]">
-                        {/* Dribbble (Large Left) - Span 5 */}
-                        <div className="col-span-5 bg-white p-5 rounded-[1.5rem] shadow-card-primary border border-border-subtle relative overflow-hidden flex flex-col justify-between">
+                        {/* Dribbble (Large Left) - Span 6 */}
+                        <div className="col-span-6 bg-white p-5 rounded-[1.5rem] shadow-card-primary border border-border-subtle relative overflow-hidden flex flex-col justify-between">
                             <div className="flex items-center gap-2">
                                 <Dribbble size={20} className="text-[#E93C68]" />
                                 <span className="font-bold text-xs text-gray-700">Dribbble</span>
                             </div>
-                            <div>
-                                <div className="text-3xl font-bold text-gray-900 tracking-tight">45.3%</div>
-                                <div className="text-sm font-bold text-gray-300">$71,048</div>
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-3xl font-bold text-gray-900 tracking-tight">45.3%</span>
+                                <span className="text-xl font-bold text-gray-300">$71,048</span>
                             </div>
-                            <div className="absolute top-0 right-0 bottom-0 w-16 opacity-[0.03] bg-[repeating-linear-gradient(45deg,#000,#000_10px,transparent_10px,transparent_20px)]"></div>
+                            <div className="absolute top-0 right-0 bottom-0 w-24 opacity-[0.05] bg-[repeating-linear-gradient(45deg,#000,#000_10px,transparent_10px,transparent_20px)] pointer-events-none"></div>
                         </div>
 
-                        {/* Right Column Grid - Span 7 */}
-                        <div className="col-span-7 grid grid-rows-3 gap-3">
+                        {/* Right Column Grid - Span 6 */}
+                        <div className="col-span-6 grid grid-rows-3 gap-3">
                             {/* Instagram (Top Right) */}
                             <div className="row-span-2 grid grid-cols-2 gap-3">
                                 <div className="bg-white p-4 rounded-[1.5rem] shadow-card-primary border border-border-subtle flex flex-col justify-between">
@@ -135,34 +135,35 @@ const SalesLeaderboard = () => {
                                         <Instagram size={18} className="text-orange-500" />
                                         <span className="font-bold text-[10px] text-gray-700">Instagram</span>
                                     </div>
-                                    <div>
-                                        <div className="text-lg font-bold text-gray-900">28.1%</div>
-                                        <div className="text-[10px] font-bold text-gray-300">$44,072</div>
+                                    <div className="mt-auto">
+                                        <div className="text-xl font-bold text-gray-900 leading-none mb-1">28.1%</div>
+                                        <div className="text-[11px] font-bold text-gray-300">$44,072</div>
                                     </div>
                                 </div>
 
                                 {/* Google & Dots */}
                                 <div className="grid grid-rows-2 gap-3">
-                                    <div className="bg-white px-3 py-2 rounded-[1.2rem] shadow-card-primary border border-border-subtle flex flex-col justify-center">
-                                        <div className="flex items-center gap-1.5 mb-0.5">
-                                            <Chrome size={12} className="text-blue-500" />
-                                            <span className="text-[10px] font-bold text-gray-700">Google</span>
+                                    <div className="bg-white px-3 py-3 rounded-[1.2rem] shadow-card-primary border border-border-subtle flex flex-col justify-between relative overflow-hidden">
+                                        <div className="absolute inset-0 opacity-[0.05] bg-[repeating-linear-gradient(45deg,#000,#000_5px,transparent_5px,transparent_10px)] pointer-events-none"></div>
+                                        <div className="flex items-center gap-1.5 relative z-10">
+                                            <Chrome size={14} className="text-blue-500 shrink-0" />
+                                            <span className="text-[11px] font-bold text-gray-800">Google</span>
                                         </div>
-                                        <div className="flex items-baseline justify-between">
-                                            <span className="text-[11px] font-bold text-gray-900">14.1%</span>
-                                            <span className="text-[9px] font-bold text-gray-300">$22k</span>
+                                        <div className="flex items-baseline gap-1 relative z-10 mt-1">
+                                            <span className="text-[13px] font-bold text-gray-900">14.1%</span>
+                                            <span className="text-[11px] font-bold text-gray-300 whitespace-nowrap">$22,114</span>
                                         </div>
                                     </div>
-                                    <div className="bg-white px-3 py-2 rounded-[1.2rem] shadow-card-primary border border-border-subtle flex flex-col justify-center">
-                                        <div className="flex items-center gap-1.5 mb-0.5">
+                                    <div className="bg-white px-3 py-3 rounded-[1.2rem] shadow-card-primary border border-border-subtle flex flex-col justify-between">
+                                        <div className="flex items-center gap-1.5">
                                             <div className="flex -space-x-1">
-                                                <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
-                                                <div className="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
+                                                <div className="w-3 h-3 bg-black rounded-full border border-white"></div>
+                                                <div className="w-3 h-3 bg-gray-300 rounded-full border border-white"></div>
                                             </div>
-                                            <span className="text-[10px] font-bold text-gray-700">5.4%</span>
+                                            <span className="text-[11px] font-bold text-gray-800">5.4%</span>
                                         </div>
-                                        <div className="flex justify-end">
-                                            <span className="text-[9px] font-bold text-gray-300">$8k</span>
+                                        <div className="flex justify-start mt-1">
+                                            <span className="text-[11px] font-bold text-gray-300">$8,469</span>
                                         </div>
                                     </div>
                                 </div>
@@ -184,58 +185,105 @@ const SalesLeaderboard = () => {
                 </div>
 
                 {/* Sales Dynamic Chart */}
-                <div className="flex-1 min-h-[160px] flex flex-col justify-end relative mt-2">
-                    <div className="flex justify-between items-center mb-2 px-2 absolute top-0 w-full">
+                <div className="flex-1 min-h-[160px] flex flex-col justify-end relative mt-8">
+                    <div className="flex justify-between items-center mb-2 px-2 w-full">
                         <span className="font-bold text-sm text-gray-800">Sales dynamic</span>
                         <ArrowUpRight size={14} className="text-gray-400" />
                     </div>
 
-                    <div className="h-28 w-full mb-6">
+                    <div className="h-32 w-full mb-4 -ml-2">
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={SALES_DYNAMIC_DATA}>
+                            <AreaChart data={SALES_DYNAMIC_DATA} margin={{ top: 20, right: 10, left: 10, bottom: 0 }}>
                                 <defs>
                                     <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
                                         <stop offset="5%" stopColor="#E93C68" stopOpacity={0.05} />
                                         <stop offset="95%" stopColor="#E93C68" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
+                                <CartesianGrid vertical={true} horizontal={false} stroke="#E5E7EB" strokeDasharray="3 3" />
+                                <XAxis
+                                    dataKey="name"
+                                    orientation="top"
+                                    axisLine={false}
+                                    tickLine={false}
+                                    tick={{ fontSize: 10, fill: '#D1D5DB', fontWeight: 600 }}
+                                    interval={1}
+                                />
                                 <Tooltip cursor={false} content={<></>} />
-                                <Area type="monotone" dataKey="value" stroke="#E93C68" strokeWidth={2.5} fillOpacity={1} fill="url(#colorValue)" />
-                                <Area type="monotone" dataKey="value2" stroke="#FFC0CB" strokeWidth={2} strokeDasharray="4 4" fill="transparent" />
+                                <Area
+                                    type="monotone"
+                                    dataKey="value"
+                                    stroke="#E93C68"
+                                    strokeWidth={3}
+                                    fillOpacity={1}
+                                    fill="url(#colorValue)"
+                                />
+                                <Area
+                                    type="monotone"
+                                    dataKey="value2"
+                                    stroke="#FF9EAA"
+                                    strokeWidth={1.5}
+                                    strokeDasharray="3 3"
+                                    fill="transparent"
+                                />
                             </AreaChart>
                         </ResponsiveContainer>
                     </div>
 
-                    {/* Custom Timeline Track */}
-                    <div className="relative h-1.5 w-full bg-gradient-to-r from-[#E93C68] via-[#E93C68] to-[#86EFAC] rounded-full mx-1">
-                        <div className="absolute -top-3 left-[28%] -translate-x-1/2 flex flex-col items-center gap-1">
-                            <div className="w-5 h-5 bg-[#2563EB] rounded-md flex items-center justify-center border-[2px] border-white shadow-sm z-10">
-                                <span className="text-white font-bold text-[8px]">Be</span>
-                            </div>
-                            <div className="w-2 h-2 bg-[#E93C68] rounded-full ring-2 ring-white"></div>
-                        </div>
+                    {/* Custom Timeline Track - Flexbox Aligned to Columns */}
+                    <div className="relative mt-4 mb-2 pl-3 pr-2">
+                        {/* Gradient Background Line */}
+                        <div className="absolute top-1/2 left-2 right-2 -translate-y-1/2 h-1.5 bg-gradient-to-r from-[#E93C68] via-[#FDE047] to-[#4ADE80] rounded-full opacity-80"></div>
 
-                        <div className="absolute -top-3 left-[52%] -translate-x-1/2 flex flex-col items-center gap-1">
-                            <div className="w-5 h-5 bg-[#E93C68] rounded-full flex items-center justify-center border-[2px] border-white shadow-sm z-10">
-                                <Dribbble size={10} className="text-white" />
-                            </div>
-                            <div className="w-2 h-2 bg-[#111111] rounded-full ring-2 ring-white"></div>
-                        </div>
+                        {/* Flex Container for Markers - Mirrors Footer Structure exactly */}
+                        <div className="relative flex items-center justify-between w-full z-10">
+                            {/* Left Spacer (matches Avatar+Name column) */}
+                            <div className="w-32 shrink-0"></div>
 
-                        <div className="absolute -top-3 left-[85%] -translate-x-1/2 flex flex-col items-center gap-1">
-                            <div className="w-5 h-5 rounded-full border-[2px] border-white shadow-sm z-10 relative">
-                                <img src={AVATAR_2} className="w-full h-full rounded-full" />
-                                <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-[#E93C68] rounded-full border border-white flex items-center justify-center">
-                                    <span className="text-[4px] text-white">★</span>
+                            {/* Right Columns Group */}
+                            <div className="flex items-center justify-end flex-1 gap-2">
+                                {/* Revenue Column Marker (Be - Blue) - ALIGNED LEFT with Text */}
+                                <div className="w-20 flex justify-start relative">
+                                    <div className="w-5 h-5 bg-[#2563EB] rounded-md flex items-center justify-center border-[2px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform">
+                                        <span className="text-white font-bold text-[8px]">Be</span>
+                                    </div>
+                                    <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
+                                        <ChevronUp size={8} className="text-white" strokeWidth={4} />
+                                    </div>
                                 </div>
+
+                                {/* Leads Column Marker (Dribbble - Pink) - ALIGNED CENTER with Pills */}
+                                <div className="w-20 flex justify-center relative">
+                                    <div className="w-5 h-5 bg-[#E93C68] rounded-full flex items-center justify-center border-[2px] border-white shadow-sm z-10 cursor-pointer hover:scale-110 transition-transform">
+                                        <Dribbble size={10} className="text-white" />
+                                    </div>
+                                    <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#111111] rounded-full border border-white flex items-center justify-center z-20">
+                                        <div className="rotate-180"><ChevronUp size={8} className="text-white" strokeWidth={4} /></div>
+                                    </div>
+                                </div>
+
+                                {/* KPI Column Spacer - Empty */}
+                                <div className="w-10"></div>
+
+                                {/* W/L Column Marker (Avatar - Star) */}
+                                <div className="w-24 flex justify-center relative pl-3">
+                                    <div className="w-5 h-5 rounded-full border-[2px] border-white shadow-sm z-10 relative overflow-hidden cursor-pointer hover:scale-110 transition-transform">
+                                        <img src={AVATAR_2} className="w-full h-full object-cover" />
+                                    </div>
+                                    <div className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#E93C68] rounded-full border border-white flex items-center justify-center z-20">
+                                        <span className="text-[6px] text-white font-bold">★</span>
+                                    </div>
+                                </div>
+
+                                {/* Right Edge Spacer */}
+                                <div className="w-8"></div>
                             </div>
-                            <div className="w-2 h-2 bg-blue-400 rounded-full ring-2 ring-white"></div>
                         </div>
                     </div>
                 </div>
 
                 {/* Footer Row: Eren Y. */}
-                <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-card-secondary border border-border-subtle flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mt-auto">
+                <div className="bg-white rounded-full p-2 pl-3 pr-2 shadow-card-secondary border border-border-subtle flex items-center justify-between hover:shadow-md transition-shadow cursor-pointer mt-auto -mx-px">
                     <div className="flex items-center gap-3 w-32 shrink-0">
                         <img src={AVATAR_2} className="w-10 h-10 rounded-full object-cover" />
                         <span className="font-bold text-sm text-gray-800 whitespace-nowrap">Eren Y.</span>
