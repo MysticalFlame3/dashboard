@@ -44,7 +44,7 @@ const StatCards = () => {
                 <div className="flex-1 flex items-stretch xl:justify-end gap-3 overflow-x-auto xl:overflow-visible pb-2 xl:pb-0 w-full xl:w-auto no-scrollbar">
 
                     {/* Top Sales - White Card */}
-                    <div className="bg-white rounded-[1.25rem] p-4 shadow-sm min-w-[140px] w-full max-w-[180px] flex flex-col justify-between group cursor-pointer hover:shadow-md transition-all">
+                    <div className="bg-white rounded-[1.25rem] p-4 shadow-card-secondary border border-border-subtle min-w-[140px] w-full max-w-[180px] flex flex-col justify-between group cursor-pointer hover:shadow-md transition-all">
                         <div className="flex justify-between items-start">
                             <span className="text-[11px] font-bold text-gray-400">Top sales</span>
                         </div>
@@ -56,14 +56,14 @@ const StatCards = () => {
                                 <img src={AVATAR_3} alt="Mikasa" className="w-5 h-5 rounded-full object-cover" />
                                 <span className="text-[11px] font-bold text-gray-700">Mikasa</span>
                             </div>
-                            <button className="w-6 h-6 bg-[#F5F5F4] rounded-full flex items-center justify-center text-gray-600 group-hover:bg-gray-200 transition-colors">
+                            <button className="w-6 h-6 bg-[#F5F5F4] rounded-full flex items-center justify-center text-gray-600 group-hover:bg-gray-200 transition-colors shadow-pill">
                                 <ChevronRight size={12} />
                             </button>
                         </div>
                     </div>
 
                     {/* Best Deal - Black Card */}
-                    <div className="bg-[#111111] rounded-[1.25rem] p-4 shadow-sm min-w-[140px] w-full max-w-[180px] flex flex-col justify-between text-white group cursor-pointer hover:shadow-xl transition-all relative overflow-hidden">
+                    <div className="bg-[#111111] rounded-[1.25rem] p-4 shadow-card-secondary min-w-[140px] w-full max-w-[180px] flex flex-col justify-between text-white group cursor-pointer hover:shadow-xl transition-all relative overflow-hidden">
                         <div className="flex justify-between items-start z-10">
                             <span className="text-[11px] font-bold text-gray-400">Best deal</span>
                             <Star size={12} className="text-gray-600 group-hover:text-yellow-400 transition-colors" />
@@ -73,34 +73,34 @@ const StatCards = () => {
                         </div>
                         <div className="flex items-center justify-between z-10">
                             <span className="text-[11px] font-bold text-gray-400">Rolf Inc.</span>
-                            <button className="w-6 h-6 bg-white rounded-md flex items-center justify-center text-black group-hover:bg-gray-200 transition-colors">
+                            <button className="w-6 h-6 bg-white rounded-md flex items-center justify-center text-black group-hover:bg-gray-200 transition-colors shadow-pill">
                                 <ChevronRight size={12} />
                             </button>
                         </div>
                     </div>
 
                     {/* Deals - Vertical Card */}
-                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-sm min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 hover:shadow-md transition-shadow cursor-pointer">
+                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-card-secondary border border-border-subtle min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 hover:shadow-md transition-shadow cursor-pointer">
                         <span className="text-[11px] font-bold text-gray-800">Deals</span>
-                        <span className="bg-[#F5F5F4] text-gray-600 text-[10px] font-bold px-2.5 py-1 rounded-full">256</span>
+                        <span className="bg-[#F5F5F4] text-gray-600 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-pill">256</span>
                         <div className="text-[10px] font-bold text-gray-400 flex items-center gap-0.5">
                             <ArrowDown size={10} /> 5
                         </div>
                     </div>
 
                     {/* Value - Vertical Card (Pink) */}
-                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-sm min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 border border-pink-100 relative hover:shadow-md transition-shadow cursor-pointer">
+                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-card-secondary border border-border-subtle min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 relative hover:shadow-md transition-shadow cursor-pointer">
                         <span className="text-[11px] font-bold text-gray-800">Value</span>
-                        <span className="bg-[#E93C68] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm shadow-pink-200">528k</span>
+                        <span className="bg-[#E93C68] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-pill">528k</span>
                         <div className="text-[10px] font-bold text-gray-500 flex items-center gap-0.5">
                             <TrendingUp size={10} /> 7.9%
                         </div>
                     </div>
 
                     {/* Win Rate - Vertical Card */}
-                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-sm min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 hover:shadow-md transition-shadow cursor-pointer">
+                    <div className="bg-white rounded-[1.25rem] p-2.5 shadow-card-secondary border border-border-subtle min-w-[90px] w-full max-w-[110px] flex flex-col items-center justify-center text-center gap-2 hover:shadow-md transition-shadow cursor-pointer">
                         <span className="text-[11px] font-bold text-gray-800">Win rate</span>
-                        <span className="bg-[#F5F5F4] text-gray-600 text-[10px] font-bold px-2.5 py-1 rounded-full">44%</span>
+                        <span className="bg-[#F5F5F4] text-gray-600 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-pill">44%</span>
                         <div className="text-[10px] font-bold text-gray-500 flex items-center gap-0.5">
                             <TrendingUp size={10} /> 1.2%
                         </div>

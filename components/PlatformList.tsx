@@ -11,14 +11,14 @@ const PlatformList = () => {
     ];
 
     return (
-        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col">
+        <div className="bg-[#F5F5F4] rounded-[2rem] p-6 h-full flex flex-col shadow-card-primary border border-border-subtle">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2 text-gray-700">
                     <AlignLeft size={20} />
                     <ChevronDown size={14} className="text-gray-400" />
                 </div>
-                <button className="bg-white px-4 py-2 rounded-full text-sm font-bold text-gray-700 shadow-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+                <button className="bg-white px-4 py-2 rounded-full text-sm font-bold text-gray-700 shadow-button-elevated flex items-center gap-2 hover:bg-gray-50 transition-colors">
                     Filters <Filter size={12} className="rotate-180" />
                 </button>
             </div>

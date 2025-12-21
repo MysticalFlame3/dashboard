@@ -72,7 +72,7 @@ const PlatformValue = () => {
     const avatars3 = [AVATAR_1, AVATAR_2, AVATAR_1];
 
     return (
-        <div className="bg-[#F5F5F4] rounded-[2rem] p-5 shadow-sm h-full flex flex-col">
+        <div className="bg-[#F5F5F4] rounded-[2rem] p-5 shadow-card-primary border border-border-subtle h-full flex flex-col">
             {/* Header */}
             <div className="flex items-start justify-between mb-5">
                 <div className="flex items-center gap-3">
@@ -87,7 +87,7 @@ const PlatformValue = () => {
                     </div>
                 </div>
                 <div className="flex bg-white rounded-lg p-1 gap-1">
-                    <button className="bg-[#111111] text-white text-[11px] font-bold px-3 py-1.5 rounded-md shadow-sm">Revenue</button>
+                    <button className="bg-[#111111] text-white text-[11px] font-bold px-3 py-1.5 rounded-md shadow-button-elevated">Revenue</button>
                     <button className="text-gray-500 text-[11px] font-bold px-3 py-1.5 hover:text-gray-900">Leads</button>
                     <button className="text-gray-500 text-[11px] font-bold px-3 py-1.5 hover:text-gray-900">W/L</button>
                 </div>
