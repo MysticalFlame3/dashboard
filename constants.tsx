@@ -1,10 +1,10 @@
-import { 
-  LayoutGrid, 
-  FileText, 
-  Settings, 
-  MessageCircle, 
-  Briefcase, 
-  PieChart, 
+import {
+  LayoutGrid,
+  FileText,
+  Settings,
+  MessageCircle,
+  Briefcase,
+  PieChart,
   FolderOpen,
   Instagram,
   Dribbble,
@@ -67,7 +67,7 @@ export const SALES_DYNAMIC_DATA: ChartData[] = [
 ];
 
 export const MONTHLY_REV_DATA: ChartData[] = [
-  { name: 'Sep', value: 6901, value2: 4000 },
-  { name: 'Oct', value: 11035, value2: 6000 },
-  { name: 'Nov', value: 9288, value2: 7500 },
+  { name: 'Sep', value: 6901, value2: 4000, value3: 3000 },
+  { name: 'Oct', value: 11035, value2: 6000, value3: 3500 },
+  { name: 'Nov', value: 9288, value2: 7500, value3: 8500 },
 ];

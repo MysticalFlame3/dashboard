@@ -31,4 +31,5 @@ export interface ChartData {
   name: string;
   value: number;
   value2?: number;
+  value3?: number;
 }
