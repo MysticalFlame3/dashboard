@@ -45,50 +45,55 @@ const StatCards = () => {
                 {/* Cards Scroll Container */}
                 <div className="flex-1 flex items-stretch xl:justify-end gap-3 overflow-x-auto xl:overflow-visible pb-2 xl:pb-0 w-full xl:w-auto no-scrollbar min-w-0">
 
-                    {/* Top Sales - Stacked Card */}
-                    <div className="relative group min-w-[140px] w-full max-w-[180px]">
-                        {/* Ghost Layer - Background */}
-                        <div className="absolute top-2 left-2.5 w-full h-full bg-[#F2F2F2] rounded-[1.5rem] -z-10 shadow-[0_16px_32px_rgba(0,0,0,0.08),0_4px_8px_rgba(0,0,0,0.04)] border border-transparent"></div>
 
-                        {/* Main Card - Foreground */}
-                        <div className="relative z-10 bg-white rounded-[1.5rem] p-4 h-full flex flex-col justify-between cursor-pointer border border-gray-100 shadow-[0_2px_8px_0_rgba(0,0,0,0.04)] transition-transform hover:-translate-y-0.5">
-                            <div className="flex justify-between items-start">
-                                <span className="text-[11px] font-bold text-gray-500">Top sales</span>
-                            </div>
-                            <div className="mt-2 mb-3">
-                                <span className="text-2xl font-bold text-gray-900">72</span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-1.5">
-                                    <img src={AVATAR_3} alt="Mikasa" className="w-5 h-5 rounded-full object-cover" />
-                                    <span className="text-[11px] font-bold text-gray-700">Mikasa</span>
+                    {/* Shared Background Wrapper - Now just a flex container */}
+                    <div className="relative flex gap-3">
+
+                        {/* Wrapper for Top Sales (Card + Background) */}
+                        <div className="relative min-w-[140px] w-full max-w-[180px]">
+                            {/* Vertical Background Plate - Darker, Narrower, Taller */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[82%] h-[115%] bg-[#e6e6e6] rounded-[1.25rem] z-0 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"></div>
+
+                            {/* Top Sales - Foreground Card */}
+                            <div className="relative z-10 group w-full h-full bg-white rounded-[1.5rem] p-4 flex flex-col justify-between cursor-pointer border border-gray-100 shadow-[0_2px_8px_0_rgba(0,0,0,0.04)] transition-transform hover:-translate-y-0.5">
+                                <div className="flex justify-between items-start">
+                                    <span className="text-[11px] font-bold text-gray-500">Top sales</span>
                                 </div>
-                                <button className="w-6 h-6 bg-[#F5F5F4] rounded-full flex items-center justify-center text-gray-600 transition-colors shadow-pill group-hover:bg-white">
-                                    <ChevronRight size={12} />
-                                </button>
+                                <div className="mt-2 mb-3">
+                                    <span className="text-2xl font-bold text-gray-900">72</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-1.5">
+                                        <img src={AVATAR_3} alt="Mikasa" className="w-5 h-5 rounded-full object-cover" />
+                                        <span className="text-[11px] font-bold text-gray-700">Mikasa</span>
+                                    </div>
+                                    <button className="w-6 h-6 bg-[#F5F5F4] rounded-full flex items-center justify-center text-gray-600 transition-colors shadow-pill group-hover:bg-white">
+                                        <ChevronRight size={12} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Best Deal - Stacked Card */}
-                    <div className="relative group min-w-[140px] w-full max-w-[180px]">
-                        {/* Ghost Layer - Background */}
-                        <div className="absolute top-2 left-2.5 w-full h-full bg-[#F2F2F2] rounded-[1.5rem] -z-10 shadow-[0_16px_32px_rgba(0,0,0,0.08),0_4px_8px_rgba(0,0,0,0.04)] border border-transparent"></div>
+                        {/* Wrapper for Best Deal (Card + Background) */}
+                        <div className="relative min-w-[140px] w-full max-w-[180px]">
+                            {/* Vertical Background Plate - Darker, Narrower, Taller */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[82%] h-[115%] bg-[#e6e6e6] rounded-[1.25rem] z-0 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"></div>
 
-                        {/* Main Card - Foreground */}
-                        <div className="relative z-10 bg-[#111111] bg-gradient-to-br from-[#111] to-[#222] rounded-[1.5rem] p-4 h-full flex flex-col justify-between text-white cursor-pointer overflow-hidden transition-transform hover:-translate-y-0.5 border border-[#222] shadow-[0_2px_8px_0_rgba(0,0,0,0.2)]">
-                            <div className="flex justify-between items-start z-10">
-                                <span className="text-[11px] font-bold text-gray-400">Best deal</span>
-                                <Star size={12} className="text-gray-600 group-hover:text-yellow-400 transition-colors" />
-                            </div>
-                            <div className="mt-2 mb-3 z-10">
-                                <span className="text-2xl font-bold">$42,300</span>
-                            </div>
-                            <div className="flex items-center justify-between z-10">
-                                <span className="text-[11px] font-bold text-gray-400">Rolf Inc.</span>
-                                <button className="w-6 h-6 bg-white rounded-md flex items-center justify-center text-black transition-colors shadow-pill group-hover:bg-gray-200">
-                                    <ChevronRight size={12} />
-                                </button>
+                            {/* Best Deal - Foreground Card */}
+                            <div className="relative z-10 group w-full h-full bg-[#111111] bg-gradient-to-br from-[#111] to-[#222] rounded-[1.5rem] p-4 flex flex-col justify-between text-white cursor-pointer overflow-hidden transition-transform hover:-translate-y-0.5 border border-[#222] shadow-[0_2px_8px_0_rgba(0,0,0,0.2)]">
+                                <div className="flex justify-between items-start z-10">
+                                    <span className="text-[11px] font-bold text-gray-400">Best deal</span>
+                                    <Star size={12} className="text-gray-600 group-hover:text-yellow-400 transition-colors" />
+                                </div>
+                                <div className="mt-2 mb-3 z-10">
+                                    <span className="text-2xl font-bold">$42,300</span>
+                                </div>
+                                <div className="flex items-center justify-between z-10">
+                                    <span className="text-[11px] font-bold text-gray-400">Rolf Inc.</span>
+                                    <button className="w-6 h-6 bg-white rounded-md flex items-center justify-center text-black transition-colors shadow-pill group-hover:bg-gray-200">
+                                        <ChevronRight size={12} />
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
