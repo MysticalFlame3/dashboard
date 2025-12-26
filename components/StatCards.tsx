@@ -13,13 +13,13 @@ const StatCards = () => {
                     <h2 className="text-base font-bold text-gray-800 mb-1">Revenue</h2>
 
                     {/* Main Content Row: Big Number + Pills */}
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
                         <div className="flex items-baseline text-[#111111] tracking-tighter leading-none">
-                            <span className="text-[2.5rem] font-extrabold">$528,976</span>
-                            <span className="text-[2.5rem] font-bold text-gray-300">.82</span>
+                            <span className="text-4xl lg:text-[2.5rem] font-extrabold">$528,976</span>
+                            <span className="text-4xl lg:text-[2.5rem] font-bold text-gray-300">.82</span>
                         </div>
 
-                        <div className="flex items-center gap-2 transform translate-y-1">
+                        <div className="flex items-center gap-2 transform translate-y-0 lg:translate-y-1">
                             <span className="bg-[#E93C68] text-white text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm shadow-pink-200">
                                 <div className="bg-white/20 rounded-full p-[1px]">
                                     <TrendingUp size={8} strokeWidth={3} />

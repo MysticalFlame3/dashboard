@@ -74,8 +74,8 @@ const PlatformValue = () => {
     return (
         <div className="bg-[#F5F5F4] rounded-[2rem] p-5 border-[4px] border-white shadow-none h-full flex flex-col">
             {/* Header */}
-            <div className="flex items-start justify-between mb-10">
-                <div className="flex items-center gap-3">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4 md:gap-0 mb-6 md:mb-10">
+                <div className="flex items-center gap-3 self-start">
                     <div className="w-10 h-10 rounded-full border border-pink-100 flex items-center justify-center text-[#E93C68] bg-white shadow-sm">
                         <Dribbble size={20} />
                     </div>
@@ -87,17 +87,17 @@ const PlatformValue = () => {
                     </div>
                 </div>
                 {/* Toggle - White Container */}
-                <div className="flex bg-white rounded-xl p-1.5 gap-1 items-center shadow-none border border-transparent">
-                    <button className="bg-[#111111] text-white text-[11px] font-bold px-4 py-2 rounded-lg shadow-md">Revenue</button>
-                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors">Leads</button>
-                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors">W/L</button>
+                <div className="flex bg-white rounded-xl p-1.5 gap-1 items-center shadow-none border border-transparent self-start md:self-auto w-full md:w-auto overflow-x-auto no-scrollbar">
+                    <button className="bg-[#111111] text-white text-[11px] font-bold px-4 py-2 rounded-lg shadow-md shrink-0">Revenue</button>
+                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors shrink-0">Leads</button>
+                    <button className="bg-transparent text-gray-900 text-[11px] font-bold px-3 py-2 hover:bg-gray-100 rounded-lg transition-colors shrink-0">W/L</button>
                 </div>
             </div>
 
             {/* Content Area */}
-            <div className="flex flex-1 gap-4 items-stretch">
+            <div className="flex flex-col md:flex-row flex-1 gap-4 items-stretch">
                 {/* Left Red Panel */}
-                <div className="w-[180px] bg-[#E93C68] rounded-tl-none rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-br-none p-0 text-white flex shrink-0 shadow-xl shadow-pink-500/20 overflow-hidden relative">
+                <div className="w-full md:w-[180px] bg-[#E93C68] rounded-tl-none rounded-tr-[2.5rem] rounded-bl-[2.5rem] rounded-br-none p-0 text-white flex shrink-0 shadow-xl shadow-pink-500/20 overflow-hidden relative min-h-[160px] md:min-h-0">
                     {/* Rotated Text Container - Aligned Left */}
                     <div className="w-12 h-full flex flex-col justify-center items-center py-6 absolute left-0 top-0 bottom-0">
                         <div className="transform -rotate-180 [writing-mode:vertical-rl] text-white/50 text-[11px] font-bold tracking-[0.2em] whitespace-nowrap uppercase">
@@ -106,30 +106,30 @@ const PlatformValue = () => {
                     </div>
 
                     {/* Main Content Info - Pushed Right */}
-                    <div className="flex-1 flex flex-col justify-center gap-8 py-10 pl-6 pr-6 ml-6">
+                    <div className="flex-1 flex flex-row md:flex-col justify-between md:justify-center items-center md:items-stretch gap-2 md:gap-8 py-6 md:py-10 pl-12 pr-6 md:pl-6 md:ml-6">
                         <div>
                             <div className="text-white/80 text-[11px] font-bold mb-1.5">Revenue</div>
-                            <div className="text-[1.5rem] font-bold tracking-tight leading-none">$18,552</div>
+                            <div className="text-xl md:text-[1.5rem] font-bold tracking-tight leading-none">$18,552</div>
                         </div>
                         <div>
                             <div className="text-white/80 text-[11px] font-bold mb-1.5">Leads</div>
-                            <div className="flex items-baseline gap-2 flex-wrap">
-                                <span className="text-[1.5rem] font-bold leading-none">373</span>
-                                <span className="text-[11px] text-white/60 font-semibold">97/276</span>
+                            <div className="flex flex-col md:flex-row items-start md:items-baseline gap-1 md:gap-2 flex-wrap">
+                                <span className="text-xl md:text-[1.5rem] font-bold leading-none">373</span>
+                                <span className="text-[10px] md:text-[11px] text-white/60 font-semibold">97/276</span>
                             </div>
                         </div>
                         <div>
                             <div className="text-white/80 text-[11px] font-bold mb-1.5">Win/lose</div>
-                            <div className="flex items-baseline gap-2 flex-wrap">
-                                <span className="text-[1.5rem] font-bold leading-none">16%</span>
-                                <span className="text-[11px] text-white/60 font-semibold">51/318</span>
+                            <div className="flex flex-col md:flex-row items-start md:items-baseline gap-1 md:gap-2 flex-wrap">
+                                <span className="text-xl md:text-[1.5rem] font-bold leading-none">16%</span>
+                                <span className="text-[10px] md:text-[11px] text-white/60 font-semibold">51/318</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Chart Area */}
-                <div className="flex-1 relative overflow-hidden">
+                <div className="flex-1 relative overflow-hidden min-h-[250px]">
                     <div className="h-full min-h-[250px] w-full text-xs">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={MONTHLY_REV_DATA} barGap={12} barCategoryGap="20%" margin={{ top: 30, right: 0, left: 0, bottom: 0 }}>
